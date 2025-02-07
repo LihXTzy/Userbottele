@@ -58,7 +58,7 @@ async def main():
 def is_device_owner(sender_id):
     return sender_id == device_owner_id
 
-@client.on(events.NewMessage(pattern='/promote', outgoing=True))
+@client.on(events.NewMessage(pattern='.gikes', outgoing=True))
 async def promote(event):
     sender = await event.get_sender()
     if not is_device_owner(sender.id):
